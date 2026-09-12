@@ -41,6 +41,10 @@ At `p=0.8`, most games remain close to the real opening while a long tail inject
 
 This is not full-game exploitability, but it is far less discontinuous than win rate against a scripted deterministic bot.
 
+## Scripted opponents
+
+The benchmark also includes the fixed diagnostics used during development: `RandomBot`, `WinBot`, `WinBlockBot`, and `TacticalBot`, plus balanced two-seat evaluation and an immediate-win / mandatory-block tactical probe. These are sanity checks rather than substitutes for the exact probe.
+
 ## Install
 
 ```bash
@@ -80,6 +84,7 @@ src/selfplay_rl_bench/
   ppo.py           # PPO update used by the benchmark
   trainer.py       # schedules and current training recipe
   exact_probe.py   # exact late-game minimax probe
+  opponents.py     # fixed bots, opponent evaluation, tactical probe
   cli.py           # benchmark CLI
 
 tests/
